@@ -1,0 +1,41 @@
+
+<!-- <div class="col-md-6 col-md-offset-3" >
+    <h2>User Login</h2>
+    <form #f = "ngForm" name="loginForm" (ngSubmit)="login(f)" role="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" ngModel="" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ngModel="" required />
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" routingLink="/deck">Login</button>  
+        </div>
+    </form>
+
+    <div (ngSubmit) = "goToSignUp()">
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" (click) = "goToSignUp()" routingLink="/signup">Sign Up</button>  
+    </div>
+</div> -->
+
+
+<div class="col-md-6 col-md-offset-3 container">
+        <h2>Login</h2>
+        <form name="loginForm" (ngSubmit)="login(f)" #f="ngForm" role="form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" id="username" ngModel="" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" ngModel="" required />
+            </div>
+            <div class="form-actions">
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" routingLink="/deck">Login</button>
+                <a [routerLink]="['/signup']" class="btn btn-link">Register</a>
+            </div>
+        </form>
+    </div>
+    

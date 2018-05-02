@@ -1,0 +1,69 @@
+<div>
+<br><br>
+<div (ngSubmit)="dealDecks()">
+    <input type="submit" class="btn btn-primary" id="shuffle" value="Shuffle Deck" (click)="shuffleDecks()"/>
+	<input type="submit" class="btn btn-primary" id="deal" value="Deal Again" (click)="dealDecks()"/>
+	<br><br>
+	<h4>Percentage:-<b> {{percentage}}% </b></h4>
+	<h4>Score:-<b> {{score}} </b></h4>
+</div>
+<div (ngSubmit)="shuffleDecks()">
+<h3>Shuffled Combinations:</h3>
+	<table  class="table table-responsive">		  
+		<tbody>
+				   <tr class="col-lg-2" *ngFor="let p of decks; let i = index">
+						<td>{{ i }}</td>  
+						<td >{{ p }}</td>
+				   </tr>
+				</tbody>
+	</table>
+	<div>		    
+		<table  class="table table-striped table-bordered table-responsive">
+		    <tbody>
+		        <tr>
+					<td></td>
+					<td *ngFor="let deck of decksValues; let i = index">{{ deck }}</td>
+				</tr>
+				<tr>
+					<td><b>Spades</b></td>
+					<td *ngFor="let s of spades; let i = index">{{ s }}</td>
+				</tr>
+				<tr>
+					<td><b>Diamonds</b></td>
+					<td *ngFor="let d of diamonds; let i = index">{{ d }}</td>
+				</tr>
+				<tr>
+					<td><b>Hearts</b></td>
+					<td *ngFor="let h of hearts; let i = index">{{ h }}</td>
+				</tr>
+				<tr>
+					<td><b>Clubs</b></td>
+					<td *ngFor="let c of clubs; let i = index" >{{ c }}</td>
+				</tr>
+			</tbody>
+	    </table>
+	</div>
+
+	<div (ngSubmit) = "getAllDecksHistory()">
+		<input type="submit" class="btn btn-primary" id="history" value="history" (click)="getAllDecksHistory()"/>
+		<br><br>
+		<h3>Average Scores:-<b> {{average}} </b></h3>
+		<table *ngIf="isLoad" class="table table-striped table-dark table-bordered table-responsive ">
+			<tbody>
+				<tr *ngFor="let d of deckList; let i = index">
+					<td>
+						{{i}}
+					</td>
+					<td>
+						{{d.percentage}}
+					</td>
+					<td>
+						{{d.config}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+</div>

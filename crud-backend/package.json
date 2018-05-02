@@ -1,0 +1,19 @@
+{
+  "name": "dealer",
+  "version": "1.0.0",
+  "description": "Allium Coding test application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Patel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mean-logger": "0.0.1",
+    "mongoose": "^5.0.0-rc1",
+    "underscore": "^1.8.3"
+  }
+}
